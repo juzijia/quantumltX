@@ -6,7 +6,7 @@ Date: 2021.7.4 22:25
 使用方法：
 Quantumuil X：添加远程重写
 [rewrite_remote]
-https://gitee.com/curtinlv/qx/raw/master/rewrite/youth.conf, tag=中青 by Curtin, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/juzijia/quantumltX/blob/main/youth.conf, tag=中青 by Curtin, update-interval=172800, opt-parser=false, enabled=true
 
 中青分享一篇文章到自己的微信上，自己点击一下即触发会自动完成10好友阅读奖励 500青豆/次。
 
