@@ -100,7 +100,7 @@ function profile(timeout = 0) {
                 result = JSON.parse(data)
                 if (result.code == 0) {
                     $.message += `\n【10.22】：修复自动提现增加闯关换手机`
-                    $.message += `\n【欢迎吊毛用户】：${result.result.nickname}`
+                    $.message += `\n【欢迎屌大用户】：${result.result.nickname}`
                     $.message += `\n【当前账户金币】：${result.result.point}`
                     $.message += `\n【提现券】：${result.result.ticket}`
                     $.message += `\n【手机碎片】：${result.result.fragment}`
@@ -201,7 +201,7 @@ function exchangetx(timeout = 0) {
         let url = {
             url: `${host}/api/v1/cash/exchange?`,
             headers: JSON.parse(ykdhd),
-            body: `amount=0.3&gate=wechat&`,
+            body: `amount=1&gate=wechat&`,
         }
         $.post(url, async (err, resp, data) => {
             try {
