@@ -47,7 +47,7 @@ $.message = ''
             $.index = i + 1;
             console.log(`\n【悦看点 账号${$.index} 】`)
             await sign() 
-        }
+        } 
       }
     } else {
       if (process.env.ykdhd && process.env.ykdhd.indexOf('@') > -1) {
@@ -76,7 +76,7 @@ $.message = ''
   .catch ((e) => $.logErr(e))
   .finally(() => $.done())
   
-
+//获取header
 function ykdck() {
     if ($request.url.indexOf("api/v1/reward/coin?") > -1) {
         const ykdhd = JSON.stringify($request.headers)
@@ -99,8 +99,8 @@ function profile(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.message += `\n【10.22】：修复自动提现增加闯关换手机`
                     $.message += `\n【欢迎屌大用户】：${result.result.nickname}`
+					$.message += `\n【历史总收益】：${result.result.total_point}`
                     $.message += `\n【当前账户金币】：${result.result.point}`
                     $.message += `\n【提现券】：${result.result.ticket}`
                     $.message += `\n【手机碎片】：${result.result.fragment}`
@@ -147,21 +147,29 @@ function sign(timeout = 0) {
                         await lottery()
                         await $.wait(20000)
                     }
-                    await $.wait(2000)
+					await $.wait(2000)
                     await news()  //刷新闻
-                    await $.wait(2000)
+					await $.wait(2000)
                     await short()  //刷小视频
-                    await $.wait(5000)
+					await $.wait(5000)
                     await allbarrier(cgarr) //闯关
                     await $.wait(5000)
-                    await profile()
+                    await profile()//个人信息
                     await $.wait(5000)
                     await exchange() //开始提现
+					await $.wait(5000)
+                    //await done()  //领取抽奖奖励
+					//await $.wait(5000)
+                    //await donenews()  //领取刷资讯奖励
+					//await $.wait(5000)
+                    //await donevideo()  //领取看视频奖励
                 } else {
                     $.log(`\n【签到状态】：${result.message}`)
-                    await $.wait(2000)
+					await $.wait(2000)
                     await allcoin(arr)
-                }
+					await $.wait(5000)
+					await profile()
+				}
             } catch (e) {
 
             } finally {
@@ -303,7 +311,7 @@ function intervalend(timeout = 0) {
         }, timeout)
     })
 }
-//看新闻15次
+//看新闻10次
 function rewardnews(newstck) {
     return new Promise((resolve) => {
         let url = {
@@ -315,8 +323,8 @@ function rewardnews(newstck) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    if (result.result['today_count'] >= 15) {
-                        console.log(`【已刷资讯15次】\n`)
+                    if (result.result['today_count'] >= 10) {
+                        console.log(`【已刷资讯10次】\n`)
                         await intervalend() //结束记录阅读时间
                     } else {
                         console.log(`【看资讯获得金币】：${result.result.reward}\n`)
@@ -367,7 +375,7 @@ function short(timeout = 0) {
         }, timeout)
     })
 }
-//刷视频15次
+//刷视频10次
 function spvideo(sptck) {
     return new Promise((resolve) => {
         let url = {
@@ -379,8 +387,8 @@ function spvideo(sptck) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    if (result.result['today_count'] >= 15) {
-                        console.log(`【已刷视频15次】`)
+                    if (result.result['today_count'] >= 10) {
+                        console.log(`【已刷视频10次】`)
                     } else {
                         console.log(`【刷视频获得金币】：${result.result.reward}\n`)
                         console.log(`【已刷视频${result.result['today_count']}次】`)
@@ -657,9 +665,61 @@ function lotterycj(num) {
 function done(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
-            url: `${host}/api/v1/zhuan/done?`,
+            url: `https://yuekandian.yichengw.cn/api/v1/zhuan/done?`,
             headers: JSON.parse(ykdhd),
             body: `id=4&`,
+        }
+        $.post(url, async (err, resp, data) => {
+            try {
+                result = JSON.parse(data)
+                if (result.code == 0) {
+                    $.log(`\n获得金币：${result.result.coin}`)
+                } else {
+                    $.log(`\n领取失败`)
+                }
+            } catch (e) {
+
+            } finally {
+
+                resolve()
+            }
+        }, timeout)
+    })
+}
+
+//看资讯领取
+function donenews(timeout = 0) {
+    return new Promise((resolve) => {
+        let url = {
+            url: `https://yuekandian.yichengw.cn/api/v1/zhuan/done?`,
+            headers: JSON.parse(ykdhd),
+            body: `id=8&`,
+        }
+        $.post(url, async (err, resp, data) => {
+            try {
+                result = JSON.parse(data)
+                if (result.code == 0) {
+                    $.log(`\n获得金币：${result.result.coin}`)
+                } else {
+                    $.log(`\n领取失败`)
+                }
+            } catch (e) {
+
+            } finally {
+
+                resolve()
+            }
+        }, timeout)
+    })
+}
+
+//看视频领取
+function donevideo(timeout = 0) {
+    return new Promise((resolve) => {
+        let url = {
+            url: `https://yuekandian.yichengw.cn/api/v1/zhuan/done?`,
+            headers: JSON.parse(ykdhd),
+            body: `id=7&`,
         }
         $.post(url, async (err, resp, data) => {
             try {
