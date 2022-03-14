@@ -1,3 +1,129 @@
+/*
+IOS: 海尔智家
+*/
+
+const jsname = '海尔智家'
+const $ = Env(jsname)
+const notifyFlag = 1; //0为关闭通知，1为打开通知,默认为1
+const logDebug = 0
+let notifyStr = ''
+let rndtime = "" //毫秒
+let httpResult //global buffer
+
+!(async () => {     
+         if(typeof $request !== "undefined"){    
+    }
+    else { 
+      await DoTask()
+      await DoTask2()
+      await DoTask3()
+      await DoTask4() 
+      await showmsg()
+    }    
+})()
+.catch((e) => $.logErr(e))
+.finally(() => $.done())
+
+async function showmsg() {  
+    notifyBody = jsname + "运行通知\n\n" + notifyStr  
+    if (notifyFlag != 1) {
+        console.log(notifyBody);
+    }
+    if (notifyFlag == 1) {
+        $.msg(notifyBody);
+        //if ($.isNode()){await notify.sendNotify($.name, notifyBody );}
+    }
+}
+
+async function DoTask() {
+  console.log(`开始任务`);
+  let Taskid =["T0134","T0135","T0136","T0138","T0139","T0140","T0142"];  
+  for(let i=0; i<Taskid.length; i++) {
+    let Tid = Taskid[i]
+    let caller = printCaller()
+    let url = `https://zj.haier.net/zjapi/longtermActivity/base/doTask`
+    let body = `{"taskCode":"${Tid}","activityUuid":"A0082","sourceClient":2}`
+    let urlObject = populatePostUrl(url,body)
+    await httpPost(urlObject,caller)
+    let result = httpResult;
+    if(!result) return
+    console.log(`第${i+1}个任务,${result.retInfo}`)
+  }
+}
+
+async function DoTask2() {
+  console.log(`开始抽奖`);
+  for(let i=0; i<7; i++) {
+    let caller = printCaller()
+    let url = `https://zj.haier.net/zjapi/longtermActivity/base/lottery`
+    let body = `{"activityUuid":"A0082"}`
+    let urlObject = populatePostUrl(url,body)
+    await httpPost(urlObject,caller)
+    let result = httpResult;
+    if(!result) return
+    //console.log(`第${i+1}次抽奖,${result.data.prizeInfo.prizeName}`)
+    console.log(JSON.stringify(result))
+  }
+}
+
+async function DoTask3() {
+  console.log(`开始任务`);
+  let Taskid =["T0138","T0139","T0140","T0141","T0142","T0143","T0144"];  
+  for(let i=0; i<Taskid.length; i++) {
+    let Tid = Taskid[i]
+    let caller = printCaller()
+    let url = `https://zj.haier.net/zjapi/longtermActivity/base/doTask`
+    let body = `{"taskCode":"${Tid}","activityUuid":"A0084","sourceClient":2}`
+    let urlObject = populatePostUrl(url,body)
+    await httpPost(urlObject,caller)
+    let result = httpResult;
+    if(!result) return
+    console.log(`第${i+1}个任务,${result.retInfo}`)
+  }
+}
+
+async function DoTask4() {
+  console.log(`开始抽奖`);
+  for(let i=0; i<7; i++) {
+    let caller = printCaller()
+    let url = `https://zj.haier.net/zjapi/longtermActivity/base/lottery`
+    let body = `{"activityUuid":"A0084"}`
+    let urlObject = populatePostUrl(url,body)
+    await httpPost(urlObject,caller)
+    let result = httpResult;
+    if(!result) return
+    //console.log(`第${i+1}次抽奖,${result.data.prizeInfo.prizeName}`)
+    console.log(JSON.stringify(result))
+  }
+}
+
+////////////////////////////////////////////////////////////////////
+function populatePostUrl(url,reqBody=''){
+    let timeInMS = Math.round(new Date().getTime())
+    let timeInSecond = Math.floor(timeInMS/1000)
+    let urlObject = {
+        url: url,
+        headers: {
+ 替换我header
+        },
+        body: reqBody
+    }
+    return urlObject;
+}
+
+async function httpPost(url,caller) {
+    httpResult = null
+    return new Promise((resolve) => {
+        $.post(url, async (err, resp, data) => {
+            try {
+                if (err) {
+                    console.log(caller + ": post请求失败");
+                    console.log(JSON.stringify(err));
+                    $.logErr(err);
+                } else {
+                    if (safeGet(data)) {
+                        httpResult = JSON.parse(data);
+                        if(logDebug) console.log(httpResult);
                     }
                 }
             } catch (e) {
