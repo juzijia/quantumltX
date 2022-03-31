@@ -100,7 +100,7 @@ function profile(timeout = 0) {
                 result = JSON.parse(data)
                 if (result.code == 0) {
                     $.message += `\n【欢迎屌大用户】：${result.result.nickname}`
-					$.message += `\n【历史总收益】：${result.result.total_point}`
+		    $.message += `\n【历史总收益】：${result.result.total_point}`
                     $.message += `\n【当前账户金币】：${result.result.point}`
                     $.message += `\n【提现券】：${result.result.ticket}`
                     $.message += `\n【手机碎片】：${result.result.fragment}`
@@ -135,9 +135,9 @@ function sign(timeout = 0) {
                     await $.wait(2000)
                     await allcoin(arr) //首页气泡
                     await $.wait(2000)
-                    for (let p = 0; p < 10; p++) {
+                    for (let p = 0; p < 5; p++) {
                         $.index = p + 1
-                        $.log(`\n【开始第${p + 1}个看视频任务】`)
+                        $.log(`\n【开始第${p + 1}个看广告视频任务】`)
                         await video()
                         await $.wait(10000)
                     }
