@@ -16,11 +16,20 @@ let jwts = ""
 
 
 !(async () => {
-    if (typeof $request !== "undefined") {
-		getJwt()
- }else {
-	console.log(`共${jwtArr.length}个CK`)
-}
+
+    if(typeof $request !== "undefined")
+    {
+        await getJwt()
+    }
+    else
+    {
+        console.log(`共${jwtArr.length}个CK`)
+    }
+  
+
+})()
+.catch((e) => $.logErr(e))
+.finally(() => $.done())
 //通知
 async function showmsg() {
     
@@ -37,7 +46,7 @@ async function showmsg() {
 }
 
 function getJwt() {
-    if ($request.url.match(/\/api.aiqingyinghang.com\/user\/piggodprogress?/)||$request.url.match(/\/api.aiqingyinghang.com\/user\/parentlist?/)) {
+    if ($request.url.match(/\/api.aiqingyinghang.com\/user\/piggodprogress?/)||$request.url.match(/\/api.aiqingyinghang.com\/user\/parentlist?/)||$request.url.match(/\/api.aiqingyinghang.com\/user\/getselfgroupsids?/)||$request.url.match(/\/api.aiqingyinghang.com\/user\/noticeinfo?/)) {
           bodyVal1 = $request.url.split('jwt=')[1]
           console.log(encodeURIComponent(bodyVal1))
           bodyVal = encodeURIComponent(bodyVal1)
@@ -48,7 +57,7 @@ function getJwt() {
             } else if (jwt.indexOf(bodyVal) == -1) {
                 jwts = jwt + "@" + bodyVal;
                 $.setdata(jwts, 'jwt');
-                //$.log(`获取蜜蜂CK: 成功, jwts: ${bodyVal}`);
+                $.log(`获取蜜蜂CK: 成功, jwts: ${bodyVal}`);
                 bodys = jwts.split("@")
                 $.msg($.name, "获取第" + bodys.length + "个CK: 成功🎉", ``)
             }
