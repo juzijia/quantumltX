@@ -37,7 +37,7 @@ async function showmsg() {
 }
 
 function getJwt() {
-    if ($request.url.match(/\/api.aiqingyinghang.com\/user\/piggodprogress?)||$request.url.match(/\/api.aiqingyinghang.com\/user\/parentlist?)) {
+    if ($request.url.match(/\/api.aiqingyinghang.com\/user\/piggodprogress?/)||$request.url.match(/\/api.aiqingyinghang.com\/user\/parentlist?/)) {
           bodyVal1 = $request.url.split('jwt=')[1]
           console.log(encodeURIComponent(bodyVal1))
           bodyVal = encodeURIComponent(bodyVal1)
