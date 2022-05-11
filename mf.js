@@ -4,6 +4,30 @@
 */
 
 const $ = new Env("蜜蜂抓取ck");
+const notify = $.isNode() ? require('./sendNotify') : '';
+message = ""
+const notifyFlag = 1; 
+
+
+
+let jwt= $.isNode() ? (process.env.jwt ? process.env.jwt : "") : ($.getdata('jwt') ? $.getdata('jwt') : "")
+let jwtArr = []
+let jwts = ""
+
+//通知
+async function showmsg() {
+    
+    notifyBody = jsname + "运行通知\n\n" + notifyStr
+    
+    if (notifyFlag != 1) {
+        console.log(notifyBody);
+    }
+
+    if (notifyFlag == 1) {
+        $.msg(notifyBody);
+        //if ($.isNode()){await notify.sendNotify($.name, notifyBody );}
+    }
+}
 
 function getJwt() {
     if ($request.url.match(/\/api.aiqingyinghang.com\/user/piggodprogress?)||$request.url.match(/\/api.aiqingyinghang.com\/user/parentlist?)) {
