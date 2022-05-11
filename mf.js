@@ -14,6 +14,13 @@ let jwt= $.isNode() ? (process.env.jwt ? process.env.jwt : "") : ($.getdata('jwt
 let jwtArr = []
 let jwts = ""
 
+
+!(async () => {
+    if (typeof $request !== "undefined") {
+		getJwt()
+ }else {
+	console.log(`共${jwtArr.length}个CK`)
+}
 //通知
 async function showmsg() {
     
