@@ -4,38 +4,9 @@
   "note": "悟空浏览器重写订阅",
   "author": "Orange",
   "resource": "https://raw.githubusercontent.com/juzijia/quantumltX/main/conf/wkllq.json",
-  "mitmhost": {
-    "list": [
-      {
-        "host": "wzq.tenpay.com",
-        "enable": false,
-        "note": "腾讯自选股"
-      },
-      {
-        "host": "*.toutiaoapi.com",
-        "enable": true,
-        "note": "今日头条"
-      },
-      {
-        "host": "*.zijieapi.com",
-        "enable": false,
-        "note": "今日头条"
-      },
-      {
-        "host": "*.kuaishou.com",
-        "enable": false,
-        "note": "快手"
-      },
-      {
-        "host": "goldcoinnew.zhuishushenqi.com",
-        "enable": false
-      },
-      {
-        "host": "*.ixigua.com",
-        "enable": false
-      }
-    ]
-  },
+  "mitmhost": [
+    "*.toutiaoapi.com"
+  ],
   "rewrite": [
 	{
 	  "match": "/luckycat/sj/v1/withdraw/withdraw?",
@@ -79,6 +50,56 @@
 	  "enable": false,
       "stage": "res"
 	}
-  ]
+  ],
+ "task": {
+    "type": "skip",
+    "list": [
+      {
+        "name": "悟空1",
+        "type": "cron",
+        "time": "10 10 8 * * *",
+        "job": {
+          "type": "runjs",
+          "target": "wkllq1.js"
+        }
+      },
+	  {
+        "name": "悟空2",
+        "type": "cron",
+        "time": "20 10 8 * * *",
+        "job": {
+          "type": "runjs",
+          "target": "wkllq1.2s"
+        }
+      },
+	  {
+        "name": "悟空3",
+        "type": "cron",
+        "time": "30 10 8 * * *",
+        "job": {
+          "type": "runjs",
+          "target": "wkllq3.js"
+        }
+      },
+	  {
+        "name": "悟空4",
+        "type": "cron",
+        "time": "40 10 8 * * *",
+        "job": {
+          "type": "runjs",
+          "target": "wkllq4.js"
+        }
+      },
+	  {
+        "name": "悟空5",
+        "type": "cron",
+        "time": "50 10 8 * * *",
+        "job": {
+          "type": "runjs",
+          "target": "wkllq5.js"
+        }
+      }
+    ]
+  }
 }
 
