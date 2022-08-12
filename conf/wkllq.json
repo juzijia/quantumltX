@@ -1,0 +1,44 @@
+{
+  "name": "悟空浏览器",
+  "type": "rewrite",
+  "note": "悟空浏览器重写订阅",
+  "author": "Orange",
+  "resource": "wkllq.json",
+  "mitmhost": [
+    "*.toutiaoapi.com"
+  ],
+  "rewrite": [
+    {
+      "match": "/luckycat/sj/v1/withdraw/withdraw?",
+      "target": "wkllq.js",
+      "enable": true
+    },
+    {
+      "match": "/luckycat/gip/v1/cooperate/exciad/done?",
+      "target": "wkllq.js",
+      "enable": true
+    },
+    {
+      "match": "/luckycat/gip/v1/daily/sign/done?",
+      "target": "wkllq.js",
+      "enable": true
+    },
+    {
+      "match": "/user/profile/homepage/v7/?",
+      "target": "wkllq.js",
+      "enable": true
+    },
+    {
+      "match": "/luckycat/sj/v1/task/page_data?",
+      "target": "wkllq.js",
+      "enable": true
+    }
+	,
+    {
+      "match": "/luckycat/gip/v1/daily/treasure_box/done?",
+      "target": "wkllq.js",
+      "enable": false
+    }
+  ]
+}
+
