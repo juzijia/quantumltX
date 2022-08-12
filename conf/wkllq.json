@@ -5,8 +5,11 @@
   "author": "Orange",
   "resource": "https://raw.githubusercontent.com/juzijia/quantumltX/main/conf/wkllq.json",
   "mitmhost": [
-	"*.toutiaoapi.com",
-	"note": "头条极速版"
+	{
+		"host": "wzq.tenpay.com",
+		"enable": true,
+		"note": "头条极速版"
+	}
   ],
   "rewrite": [
 	{
