@@ -3,7 +3,7 @@
   "type": "rewrite",
   "note": "悟空浏览器重写订阅",
   "author": "Orange",
-  "resource": "wkllq.json",
+  "resource": "https://raw.githubusercontent.com/juzijia/quantumltX/main/conf/wkllq.json",
   "mitmhost": [
     "*.toutiaoapi.com"
   ],
