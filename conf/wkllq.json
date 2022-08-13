@@ -69,7 +69,7 @@
         "time": "20 10 8 * * *",
         "job": {
           "type": "runjs",
-          "target": "wkllq1.2s"
+          "target": "wkllq2.js"
         }
       },
       {
