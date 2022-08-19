@@ -55,48 +55,12 @@
     "type": "skip",
     "list": [
       {
-        "name": "悟空1",
+        "name": "悟空浏览器",
         "type": "cron",
-        "time": "10 10 8 * * *",
+        "time": "10 10 11 * * *",
         "job": {
           "type": "runjs",
-          "target": "wkllq1.js"
-        }
-      },
-      {
-        "name": "悟空2",
-        "type": "cron",
-        "time": "20 10 8 * * *",
-        "job": {
-          "type": "runjs",
-          "target": "wkllq2.js"
-        }
-      },
-      {
-        "name": "悟空3",
-        "type": "cron",
-        "time": "30 10 8 * * *",
-        "job": {
-          "type": "runjs",
-          "target": "wkllq3.js"
-        }
-      },
-      {
-        "name": "悟空4",
-        "type": "cron",
-        "time": "40 10 8 * * *",
-        "job": {
-          "type": "runjs",
-          "target": "wkllq4.js"
-        }
-      },
-      {
-        "name": "悟空5",
-        "type": "cron",
-        "time": "50 10 8 * * *",
-        "job": {
-          "type": "runjs",
-          "target": "wkllq5.js"
+          "target": "wkllq.js"
         }
       }
     ]
