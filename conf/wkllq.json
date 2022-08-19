@@ -10,44 +10,30 @@
   "rewrite": [
     {
       "match": "/luckycat/sj/v1/withdraw/withdraw?",
-      "target": "wkllq.js",
+      "target": "wkllq_sync.js",
       "note": "提现",
       "enable": true,
       "stage": "res"
     },
     {
       "match": "/luckycat/gip/v1/cooperate/exciad/done?",
-      "target": "wkllq.js",
+      "target": "wkllq_sync.js",
       "note": "广告",
       "enable": true,
       "stage": "res"
     },
     {
-      "match": "/luckycat/gip/v1/daily/sign/done?",
-      "target": "wkllq.js",
-      "note": "签到",
-      "enable": true,
-      "stage": "res"
-    },
-    {
       "match": "/user/profile/homepage/v7/?",
-      "target": "wkllq.js",
+      "target": "wkllq_sync.js",
       "note": "昵称",
       "enable": true,
       "stage": "res"
     },
     {
       "match": "/luckycat/sj/v1/task/page_data?",
-      "target": "wkllq.js",
+      "target": "wkllq_sync.js",
       "note": "收益信息",
       "enable": true,
-      "stage": "res"
-    },
-    {
-      "match": "/luckycat/gip/v1/daily/treasure_box/done?",
-      "target": "wkllq.js",
-      "note": "宝箱",
-      "enable": false,
       "stage": "res"
     }
   ],
@@ -60,7 +46,7 @@
         "time": "10 10 11 * * *",
         "job": {
           "type": "runjs",
-          "target": "wkllq1_sync.js"
+          "target": "wkllq_sync.js"
         }
       }
     ]
