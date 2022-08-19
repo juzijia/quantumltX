@@ -60,7 +60,7 @@
         "time": "10 10 11 * * *",
         "job": {
           "type": "runjs",
-          "target": "wkllq.js"
+          "target": "wkllq1_sync.js"
         }
       }
     ]
