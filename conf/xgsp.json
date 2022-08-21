@@ -51,10 +51,17 @@
       "stage": "res"
     },
     {
+      "match": "/luckycat/xigua/v1/withdraw/take_cash?",
+      "target": "xgsp_sync.js",
+      "note": "提现",
+      "enable": true,
+      "stage": "res"
+    },
+    {
       "match": "/luckycat/xigua/v:version/task/done/live?",
       "target": "xgsp_sync.js",
       "note": "日常直播",
-      "enable": true,
+      "enable": false,
       "stage": "res"
     }
   ],
