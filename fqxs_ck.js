@@ -1,24 +1,7 @@
-const jsname = '番茄小说重写'
+const jsname = '番茄小说CK重写'
 const $ = Env(jsname)
-const notifyFlag = 1; //0为关闭通知，1为打开通知,默认为1
-const logDebug = 0
-
-//const notify = $.isNode() ? require('./sendNotify') : '';
-let notifyStr = ''
-let NumUser = 0
-let Nickname = []
 let rndtime = "" //毫秒
 let httpResult //global buffer
-let userIdx = 0
-let userStatus = []
-var now = new Date()
-var hour= now.getHours()
-var minute= now.getMinutes()
-let Adnum= 1
-let Bugnum = 2
-let i;
-let X;
-let headersList = [];
 ///////////////////////////////////////////////////////////////////
 
 !(async () => {
@@ -39,10 +22,10 @@ let headersList = [];
 .catch((e) => $.logErr(e))
 .finally(() => $.done())
 async function GetRewrite() {
-    if ($request.url.indexOf('/luckycat/novel/v2/task/page?') > -1) {
+    if ($request.url.indexOf('luckycat/novel/v2/task/page?') > -1) {
         let cookies = "'" + $request.url + "#" + $request.headers["Cookie"] + "#" + $request.headers["X-Argus"] + "#" + $request.headers["X-Ladon"] + "#" + $request.headers["User-Agent"] + "#" + $request.headers["sdk-version"] + "#" + $request.headers["passport-sdk-version"] + "'";
         let cookiesArr = [];
-        let savedCookies = $.getdata('fqxsCookies');
+        let savedCookies = $.getdata('fqxscookies');
         if (savedCookies) {
             cookiesArr = savedCookies.split('\n');
         }
@@ -50,14 +33,14 @@ async function GetRewrite() {
             cookiesArr.push(cookies);
         }
         const finalCookies = cookiesArr.join('\n');
-        $.setdata(finalCookies, 'fqxsCookies');
+        $.setdata(finalCookies, 'fqxscookies');
         $.log(`获取番茄小说CK成功:\n${cookies}`);
-        $.msg(`获取第${cookiesArr.length}次头条CK成功`);
+        $.msg(`获取第${cookiesArr.length}次番茄小说CK成功`);
     }
-    if($request.url.indexOf('/luckycat/novel/v1/task/done/sign_in?') > -1) {
+    if($request.url.indexOf('/luckycat/novel/v1/task/hexiao_active_task_page?') > -1) {
             const body = JSON.parse($request.body);
             const actCommon = body.act_common;
-            $.setdata(actCommon,'jrttbody')
+            $.setdata(actCommon,'fqxsbody')
             $.log(`获取番茄小说body成功: \n${JSON.stringify(actCommon)}\n`)
             $.msg(`获取番茄小说Body成功`);
     }
