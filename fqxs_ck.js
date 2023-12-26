@@ -54,7 +54,7 @@ async function GetRewrite() {
         $.log(`获取番茄小说CK成功:\n${cookies}`);
         $.msg(`获取第${cookiesArr.length}次头条CK成功`);
     }
-    if($request.url.indexOf('score_task/v1/task/open_treasure_box/?') > -1) {
+    if($request.url.indexOf('/luckycat/novel/v1/task/done/sign_in?') > -1) {
             const body = JSON.parse($request.body);
             const actCommon = body.act_common;
             $.setdata(actCommon,'jrttbody')
