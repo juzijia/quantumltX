@@ -1,4 +1,4 @@
-const jsname = '得间小说CK重写'
+const jsname = 'djCK重写'
 const $ = Env(jsname)
 const notifyFlag = 1; //0为关闭通知，1为打开通知,默认为1
 const logDebug = 0
