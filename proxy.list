@@ -1,0 +1,23 @@
+# ===== TMDB / TVDB =====
+DOMAIN-SUFFIX,themoviedb.org
+DOMAIN-SUFFIX,tmdb.org
+DOMAIN-SUFFIX,api.themoviedb.org
+DOMAIN-SUFFIX,thetvdb.com
+DOMAIN-SUFFIX,api.thetvdb.com
+# ===== 海报 / 背景 =====
+DOMAIN-SUFFIX,fanart.tv
+DOMAIN-SUFFIX,assets.fanart.tv
+
+DOMAIN-SUFFIX,mediux.pro
+DOMAIN-SUFFIX,image.tmdb.org
+# ===== 演员 / 扩展 =====
+DOMAIN-SUFFIX,imdb.com
+DOMAIN-SUFFIX,images-amazon.com
+DOMAIN-SUFFIX,media-amazon.com
+# ===== 其他 =====
+DOMAIN-SUFFIX,omdbapi.com
+DOMAIN-SUFFIX,trakt.tv
+DOMAIN-SUFFIX,opensubtitles.org
+DOMAIN-SUFFIX,opensubtitles.com
+
+
