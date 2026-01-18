@@ -20,4 +20,37 @@ DOMAIN-SUFFIX,trakt.tv
 DOMAIN-SUFFIX,opensubtitles.org
 DOMAIN-SUFFIX,opensubtitles.com
 
+# ===== Docker 镜像 / Hub / Container Registry =====
+DOMAIN-SUFFIX,registry-1.docker.io
+DOMAIN-SUFFIX,docker.io
+DOMAIN-SUFFIX,production.cloudflare.docker.com
+DOMAIN-SUFFIX,ghcr.io
+DOMAIN-SUFFIX,quay.io
+DOMAIN-SUFFIX,gcr.io
+DOMAIN-SUFFIX,k8s.gcr.io
+
+# ===== GitHub / Release / Raw 文件 =====
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,objects.githubusercontent.com
+
+# ===== HuggingFace 模型 / LFS =====
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,hf.co
+DOMAIN-SUFFIX,huggingfaceusercontent.com
+DOMAIN-SUFFIX,cdn-lfs.huggingface.co
+
+# ===== OpenAI / AI 平台 =====
+DOMAIN-SUFFIX,openai.com
+
+# ===== 其他必要工具 / 镜像源 =====
+DOMAIN-SUFFIX,deb.debian.org
+DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,fastly.net
+DOMAIN-SUFFIX,openstreetmap.org
+DOMAIN-SUFFIX,imnks.com
+DOMAIN-SUFFIX,bobohome.store
+DOMAIN-SUFFIX,520810.xyz
 
