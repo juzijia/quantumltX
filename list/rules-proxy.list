@@ -43,8 +43,10 @@ DOMAIN-SUFFIX,hf.co
 DOMAIN-SUFFIX,huggingfaceusercontent.com
 DOMAIN-SUFFIX,cdn-lfs.huggingface.co
 
-# ===== OpenAI / AI 平台 =====
+# ===== OpenAI / AI 平台 上传文件的域名 =====
 DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,vultr.com
 
 # ===== 其他必要工具 / 镜像源 =====
 DOMAIN-SUFFIX,deb.debian.org
