@@ -30,6 +30,7 @@ DOMAIN-SUFFIX,ghcr.io
 DOMAIN-SUFFIX,quay.io
 DOMAIN-SUFFIX,gcr.io
 DOMAIN-SUFFIX,k8s.gcr.io
+DOMAIN-SUFFIX,gravatar.com
 
 # ===== GitHub / Release / Raw 文件 =====
 DOMAIN-SUFFIX,github.com
