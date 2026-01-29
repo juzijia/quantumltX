@@ -58,6 +58,7 @@ DOMAIN-SUFFIX,openstreetmap.org
 DOMAIN-SUFFIX,imnks.com
 DOMAIN-SUFFIX,bobohome.store
 DOMAIN-SUFFIX,520810.xyz
+DOMAIN-SUFFIX,gstatic.com
 # ===== UI烦人的ip_api请求 =====
 DOMAIN,api.ipify.org
 
