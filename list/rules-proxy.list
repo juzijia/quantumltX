@@ -1,61 +1,70 @@
-# ===== TMDB / TVDB =====
+# ==========================================
+# 🎯 媒体搜刮 & 字幕 (TMDB/TVDB/IMDB)
+# ==========================================
 DOMAIN-SUFFIX,themoviedb.org
 DOMAIN-SUFFIX,tmdb.org
 DOMAIN-SUFFIX,api.themoviedb.org
+DOMAIN-SUFFIX,image.tmdb.org
 DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,api.thetvdb.com
-# ===== 海报 / 背景 =====
 DOMAIN-SUFFIX,fanart.tv
 DOMAIN-SUFFIX,assets.fanart.tv
 DOMAIN-SUFFIX,emby.media
 DOMAIN-SUFFIX,mb3admin.com
-
 DOMAIN-SUFFIX,mediux.pro
-DOMAIN-SUFFIX,image.tmdb.org
-# ===== 演员 / 扩展 =====
 DOMAIN-SUFFIX,imdb.com
 DOMAIN-SUFFIX,images-amazon.com
 DOMAIN-SUFFIX,media-amazon.com
-# ===== 其他 =====
 DOMAIN-SUFFIX,omdbapi.com
 DOMAIN-SUFFIX,trakt.tv
 DOMAIN-SUFFIX,opensubtitles.org
 DOMAIN-SUFFIX,opensubtitles.com
+DOMAIN-SUFFIX,plex.tv
 
-# ===== Docker 镜像 / Hub / Container Registry =====
-DOMAIN-SUFFIX,registry-1.docker.io
+# ==========================================
+# 🐳 Docker / Kubernetes / 镜像仓库
+# ==========================================
 DOMAIN-SUFFIX,docker.io
+DOMAIN-SUFFIX,docker.com
+DOMAIN-SUFFIX,dockerhub.com
+DOMAIN-SUFFIX,registry-1.docker.io
+DOMAIN-SUFFIX,auth.docker.io
 DOMAIN-SUFFIX,production.cloudflare.docker.com
 DOMAIN-SUFFIX,ghcr.io
 DOMAIN-SUFFIX,quay.io
 DOMAIN-SUFFIX,gcr.io
 DOMAIN-SUFFIX,k8s.gcr.io
+DOMAIN-SUFFIX,registry.k8s.io
+DOMAIN-SUFFIX,l.gcr.io
+DOMAIN-SUFFIX,compose-spec.io
 DOMAIN-SUFFIX,gravatar.com
 DOMAIN,d1q6f0aelx0por.cloudfront.net
 DOMAIN,d2wy8f7a9ursnm.cloudfront.net
 DOMAIN,d36jcksde1wxzq.cloudfront.net
-DOMAIN-SUFFIX,compose-spec.io
-DOMAIN-SUFFIX,docker.com
-DOMAIN-SUFFIX,dockerhub.com
 
-# ===== GitHub / Release / Raw 文件 =====
+# ==========================================
+# 👨‍💻 GitHub & 开发工具 (Release/Raw)
+# ==========================================
 DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,github.io
 DOMAIN-SUFFIX,githubusercontent.com
 DOMAIN-SUFFIX,githubassets.com
 DOMAIN-SUFFIX,objects.githubusercontent.com
 
-# ===== HuggingFace 模型 / LFS =====
+# ==========================================
+# 🤖 AI 模型 & 平台 (HuggingFace/OpenAI)
+# ==========================================
 DOMAIN-SUFFIX,huggingface.co
 DOMAIN-SUFFIX,hf.co
 DOMAIN-SUFFIX,huggingfaceusercontent.com
 DOMAIN-SUFFIX,cdn-lfs.huggingface.co
-
-# ===== OpenAI / AI 平台 上传文件的域名 =====
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,vultr.com
 
-# ===== 其他必要工具 / 镜像源 =====
+# ==========================================
+# 🛠 其他工具 & 镜像源
+# ==========================================
 DOMAIN-SUFFIX,deb.debian.org
 DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-SUFFIX,cloudfront.net
@@ -65,6 +74,4 @@ DOMAIN-SUFFIX,imnks.com
 DOMAIN-SUFFIX,bobohome.store
 DOMAIN-SUFFIX,520810.xyz
 DOMAIN-SUFFIX,gstatic.com
-# ===== UI烦人的ip_api请求 =====
 DOMAIN,api.ipify.org
-
